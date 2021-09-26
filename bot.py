@@ -61,13 +61,20 @@ async def on_message(message):
         try:
             latex_to_img(text)
             await message.reply(file = discord.File("img.jpg"))
+            #Delete the image from disk after use
+            if os.path.exists("img.jpg"):
+                os.remove("img.jpg")
         except:
+            #Delete the image from disk after use
+            if os.path.exists("img.jpg"):
+                os.remove("img.jpg")
             #Inform user if any problem in compiling
             await message.reply("Cant compile latex.")
+            #Restart the code. Otherwise the error string still remain in memory. I dont know why :)
+            os.system("python bot.py")
+            quit()
 
-        #Delete the image from disk after use
-        if os.path.exists("img.jpg"):
-            os.remove("img.jpg")
+        
         #Test purpose
         gc.collect()
     
