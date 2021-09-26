@@ -12,6 +12,7 @@ For this:
   3. Run `pip install matplotlib pillow discord.py` in terminal
   4. Go to the top of "bot.py" and paste your bot token from discord developper portal inside ""
   5. Run your code and add bot to your discord server.
-  6. Include '$' at the beginning of your message including latex code. i.e., `$Here is a fraction $frac{x^2}{y}`
+  6. Include '$' at the beginning of your message including latex code. i.e., `$Here is a fraction $\frac{x^2}{y^2}$`![image](https://user-images.githubusercontent.com/80115356/134802990-34b4f17a-c58f-45b1-bc10-57aa92413870.png)
 
-*Hope Some one got it helpful*
+
+*Hope Someone got it helpful*
