@@ -1,0 +1,8 @@
+config.py
+
+__pycache__
+
+*.pdf
+*.png
+*.aux
+*.log
