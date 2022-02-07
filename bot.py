@@ -7,7 +7,7 @@ import discord
 from discord import user
 from discord import message
 from discord import client
-from tex2png import texrender
+from tex2png import *
 import asyncio
 
 
@@ -17,14 +17,14 @@ async def handle_tex_message(message):
     text = message.content[5:] #Remove the '$tex ' at beginning
     try:
         texrender(text)
-        reply = await message.reply(file = discord.File("tmp/tmp.png"))
+        reply = await message.reply("✅Compiled successfully. You can edit your message in 1 minute to recompile.", file = discord.File("tmp/tmp.jpg"))
     except:
-        #Inform user if any problem in compiling
-        await message.reply("❗Compilation error")
+        reply = await message.reply("❗Compilation error\n```\n" + get_error() + "\n```")
     
     def check(before, after):
         return before == message
 
+    # Wait for user to edit
     try:
         before, after = await client.wait_for('message_edit', timeout = 60.0, check = check)
     except asyncio.TimeoutError:
@@ -47,6 +47,9 @@ async def on_message(message):
     # Command prefix "$tex"
     if message.content.startswith("$tex"):
         await handle_tex_message(message)
+    
+    elif message.content.startswith("$help"):
+        await message.channel.send("Command syntex: `$tex <latex code>`\nYou can edit you message in 1 minute to recompile.")
         
 
 client.run(token)

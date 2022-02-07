@@ -1,2 +1,1 @@
 discord.py==1.7.1
-pdf2image==1.16.0
