@@ -24,7 +24,7 @@ Also it will show the errors if type wrong.
 #### Example
 This command (code from overleaf example) produce the following
 ```
-$tex $tex \begin{abstract}
+$tex \begin{abstract}
 \LaTeX{} is the best way to write mathematics. It completely pisses all over Word. However, it does take some time to get used to so might not be worth your while if you won't write too much. The way I use it is to first download and install a latex editor and then get writing, but I would recommend that you use this website instead since you can get going a lot quicker. The upshot of the whole business is that you type in here and then a pdf is generated with all the equations looking ace. I'll give you some examples. 
 \end{abstract}
 
