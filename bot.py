@@ -11,7 +11,7 @@ from tex2png import *
 import asyncio
 
 
-client = discord.Client()
+client = discord.Client(status = discord.Status.idle, activity = discord.Game("TexRender"))
 
 async def handle_tex_message(message):
     text = message.content[5:] #Remove the '$tex ' at beginning
@@ -38,7 +38,6 @@ async def handle_tex_message(message):
 @client.event
 async def on_ready():
     print('Logged in as {0.user}'.format(client))
-    await client.change_presence(status = discord.Status.idle, activity = discord.Game("TexRender"))
 
 @client.event
 async def on_message(message):
