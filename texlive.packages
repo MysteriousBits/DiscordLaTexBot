@@ -2,6 +2,9 @@ standalone
 xkeyval
 varwidth
 amscls
+amsfonts
+mathtools
 xcolor
 graphics
 pgf
+tikz-cd
