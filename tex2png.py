@@ -1,10 +1,21 @@
 import os
+import platform
 
-# Change it according to os
-# Linux
-shell_command = "chmod u+x ./scripts/compile.sh && ./scripts/compile.sh"
-# Windows
-# shell_command = "scripts\\compile.bat"
+if platform.system() == "Windows":
+    shell_command = "scripts\\compile.bat"
+else:
+    shell_command = "chmod u+x ./scripts/compile.sh && ./scripts/compile.sh"
+
+# Another method of getting os name
+# But it should be avoided
+# Because it returns 'posix' for both Linux and MacOS
+# However it is not a problem for now because we are either using Windows batchfile or shell script
+#
+# If you don't prefer platform module, you can use this method 
+#if os.name == "nt":
+#    shell_command = "scripts\\compile.bat"
+#else:
+    #shell_command = "chmod u+x ./scripts/compile.sh && ./scripts/compile.sh"
 
 def texrender(msg):
     template = open("scripts/template.tex", 'r')
