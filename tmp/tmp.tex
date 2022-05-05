@@ -1,12 +1,24 @@
 \documentclass[varwidth, margin=2mm]{standalone}
 
 \usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{tikz}
+% \usepackage{mathtools}
+\usepackage{amsthm, amssymb}
+% \usepackage{graphicx}
+% \usepackage{xcolor}
+% \usepackage{tikz, tikz-cd}
 
 \begin{document}
 
-$7688
+Lets call each m people a \emph{Group}, their common friend the \emph{Target} and a group including $P$ a \emph{Good Group}. Suppose $P$ has $k$ friends.
+\\\\
+\textbf{Claim:} $P$ has $m$ friends or $k=m$.
+\\\\
+\textbf{Lemma 1:} \emph{Each \emph{Good Group} has a distinct \emph{Target}}
+\\
+Suppose two \emph{Good Groups} $G_1$ and $G_2$ have same target $T$. Now make a \emph{Group} $G_3$ from the members of $G_1$ and $G_2$ excluding $P$. Now all the members of $G_3$ have 2 \emph{Targets} $T$ and $P$,  which is a contradiction.
+\\\\ 
+\textbf{Proof:} Suppose, $k > m$. There are $\binom{k}{m-1}$ different \emph{Targets} of all the \emph{Good Groups}  according to Lemma 1. Now all the \emph{Targets} are among those $k$ people as they are friends of $P$. Then $\binom{k}{m-1} \leq k$. But its a contradiction. 
+\\
+Hence $k=m$. \qed
 
 \end{document}
